@@ -29,6 +29,15 @@
   <nav class="bg-white shadow-md sticky top-0 z-50 fade-in">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
       <h1 class="text-2xl font-extrabold text-blue-800">Pinnacle Ledger Solution's</h1>
+      <!-- Mobile Hamburger Menu -->
+      <div class="block md:hidden">
+        <button @click="open = !open" class="text-blue-800">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      <!-- Desktop Menu -->
       <ul class="hidden md:flex space-x-6 font-medium">
         <li><a href="#home" class="hover:text-blue-600">Home</a></li>
         <li><a href="#services" class="hover:text-blue-600">Services</a></li>
@@ -38,22 +47,32 @@
       </ul>
       <a href="#contact" class="px-4 py-2 bg-blue-800 text-white rounded-full hover:bg-blue-600 transition glow">Free Consultation</a>
     </div>
+    <!-- Mobile Menu -->
+    <div x-show="open" class="md:hidden bg-white absolute top-16 left-0 right-0 shadow-md z-50">
+      <ul class="flex flex-col items-center py-4 space-y-4">
+        <li><a href="#home" class="hover:text-blue-600">Home</a></li>
+        <li><a href="#services" class="hover:text-blue-600">Services</a></li>
+        <li><a href="#about" class="hover:text-blue-600">About</a></li>
+        <li><a href="#pricing" class="hover:text-blue-600">Pricing</a></li>
+        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!-- Hero Section -->
   <section id="home" class="py-20 text-center bg-gradient-to-r from-blue-100 to-blue-300 fade-in">
     <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-5xl font-extrabold text-blue-900 leading-tight">Tailored Bookkeeping & Tax Advisory Solutions</h2>
-      <p class="text-xl text-gray-700 mt-4">Providing personalized financial services and expert VAT guidance aligned with UAE tax regulations to help your business grow with confidence.</p>
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-blue-900 leading-tight">Tailored Bookkeeping & Tax Advisory Solutions</h2>
+      <p class="text-lg sm:text-xl text-gray-700 mt-4">Providing personalized financial services and expert VAT guidance aligned with UAE tax regulations to help your business grow with confidence.</p>
       <a href="#contact" class="mt-6 inline-block bg-blue-800 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition">Get Started</a>
     </div>
   </section>
 
-  <!-- Services -->
+  <!-- Services Section -->
   <section id="services" class="py-20 bg-white fade-in">
     <div class="max-w-6xl mx-auto px-6 text-center">
-      <h3 class="text-3xl font-bold text-blue-800 mb-10">Our Core Services</h3>
-      <div class="grid md:grid-cols-3 gap-10">
+      <h3 class="text-3xl sm:text-4xl font-bold text-blue-800 mb-10">Our Core Services</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
         <div class="bg-blue-50 p-6 rounded-xl shadow hover:shadow-2xl transition">
           <h4 class="text-xl font-semibold mb-2">Bookkeeping</h4>
           <p>Accurate recording and management of your financial transactions to ensure compliance and clarity.</p>
@@ -70,19 +89,19 @@
     </div>
   </section>
 
-  <!-- About -->
+  <!-- About Section -->
   <section id="about" class="py-20 bg-gray-50 fade-in">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <h3 class="text-3xl font-bold text-blue-800 mb-6">Why Choose Us?</h3>
-      <p class="text-lg text-gray-700">With years of experience and a deep understanding of UAE tax laws, Pinnacle Ledger Solutions offers reliable and transparent financial services that empower your business to succeed.</p>
+      <h3 class="text-3xl sm:text-4xl font-bold text-blue-800 mb-6">Why Choose Us?</h3>
+      <p class="text-lg sm:text-xl text-gray-700">With years of experience and a deep understanding of UAE tax laws, Pinnacle Ledger Solutions offers reliable and transparent financial services that empower your business to succeed.</p>
     </div>
   </section>
 
-  <!-- Pricing -->
+  <!-- Pricing Section -->
   <section id="pricing" class="py-20 bg-white fade-in">
     <div class="max-w-6xl mx-auto px-6 text-center">
-      <h3 class="text-3xl font-bold text-blue-800 mb-10">Our Pricing</h3>
-      <div class="grid md:grid-cols-3 gap-6">
+      <h3 class="text-3xl sm:text-4xl font-bold text-blue-800 mb-10">Our Pricing</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <div class="bg-gray-50 p-6 rounded-xl border hover:shadow-lg">
           <h4 class="text-xl font-bold">Starter</h4>
           <p class="text-sm my-2">Ideal for freelancers and solo entrepreneurs</p>
@@ -102,10 +121,10 @@
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Contact Section -->
   <section id="contact" class="py-20 bg-gray-100 fade-in">
     <div class="max-w-xl mx-auto px-6 text-center">
-      <h3 class="text-3xl font-bold text-blue-800 mb-6">Let’s Work Together</h3>
+      <h3 class="text-3xl sm:text-4xl font-bold text-blue-800 mb-6">Let’s Work Together</h3>
       <p class="mb-6">Contact us today via WhatsApp for a free consultation and learn how we can help streamline your business finances.</p>
       <a href="https://wa.me/971568533820" target="_blank" class="inline-block bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-500">Chat on WhatsApp</a>
     </div>
@@ -115,6 +134,15 @@
   <footer class="bg-blue-900 text-white py-6 text-center">
     <p>&copy; 2025 Pinnacle Ledger Solutions. All rights reserved. Based in the UAE.</p>
   </footer>
+
+  <!-- AlpineJS script to toggle mobile menu -->
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('navbar', () => ({
+        open: false,
+      }))
+    })
+  </script>
 
 </body>
 </html>
